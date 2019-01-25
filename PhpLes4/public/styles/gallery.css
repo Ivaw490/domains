@@ -1,0 +1,112 @@
+body {
+    background-color: rgb(75, 75, 75);
+}
+h1 {
+    color: whitesmoke;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+.add_img{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+#add_img_form{
+    display: flex;
+}
+#add_img_button{
+    display: block;
+    margin-right: 30px;
+    background-color: gray;
+    border: 1px solid black;
+    border-radius: 6%;
+    padding: 5px;
+    cursor: pointer;
+    transition: color, border-color, .2s;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.562);
+}
+#add_img_button:hover{
+    border-color: greenyellow;
+    color: greenyellow;
+}
+input[type="file"]{
+    display: none;
+}
+input[type="submit"]{
+    background-color: gray;
+    border: 1px solid black;
+    border-radius: 6%;
+    padding: 5px;
+    cursor: pointer;
+    transition: color, border-color, .2s;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.562);
+}
+input[type="submit"]:hover{
+    border-color: greenyellow;
+    color: greenyellow;
+}
+.gallery {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.gallery a {
+    width: 200px;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gallery a img {
+    height: 100%;
+    width: 100%;
+    transition: border-color .2s;
+    border: 3px solid gray;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.562);
+    
+}
+.gallery a img:hover {
+    border: 3px solid greenyellow;
+}
+.form_bg{
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.61);
+}
+#slider_form {
+    display: none;
+    position: fixed;
+}
+#X {
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 35px;
+    transition: border-color, color, .2s;
+    line-height: 20px;
+    border: 3px solid greenyellow;
+    border-radius: 50%;
+    padding: 5px;
+}
+#X::before {
+    content: "\00d7";  
+}
+#X:hover {
+    color: greenyellow;
+    border-color: black;
+    cursor: pointer;
+}
+.form_img {
+    max-width: 80vw;
+    max-height: 80vh;
+
+}
