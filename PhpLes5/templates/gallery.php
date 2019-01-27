@@ -21,20 +21,21 @@
         <input type="submit" value="Add img">
     </form>
     </div>
+
     <div class="gallery">
         <?php foreach($img_gallery as $img_item) {?>
-            <a href="#"> 
+            <a href="/single.php?id=1" target="_blank">
                 <img src="<?="/../img/mini/" .$img_item?>" data-src="<?="/../img/" .$img_item?>" alt="">
             </a>
         <?php } ?>
-        
     </div>
+
     <div class="form_bg">
         <div id="slider_form">
             <div id="X"></div>
         </div>
     </div>
-    
-    <script src="/../js/js.js"></script>    
+
+<!--    <script src="/../js/js.js"></script>    -->
 </body>
 </html>
