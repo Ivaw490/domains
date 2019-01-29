@@ -24,7 +24,7 @@
 
     <div class="gallery">
         <?php foreach($img_gallery as $img_item) {?>
-            <a href="/single.php?id=1" target="_blank">
+            <a href="single.php" target="_blank">
                 <img src="<?="/../img/mini/" .$img_item?>" data-src="<?="/../img/" .$img_item?>" alt="">
             </a>
         <?php } ?>
