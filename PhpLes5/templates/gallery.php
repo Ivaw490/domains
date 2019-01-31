@@ -23,9 +23,9 @@
     </div>
 
     <div class="gallery">
-        <?php foreach($img_gallery as $img_item) {?>
-            <a href="single.php" target="_blank">
-                <img src="<?="/../img/mini/" .$img_item?>" data-src="<?="/../img/" .$img_item?>" alt="">
+        <?php while($row = mysqli_fetch_assoc($img_gallery) ) {?>
+            <a href="single.php?id=<?=$row["id"]?>" target="_blank">
+                <img src="<?=$row["path"]. $row["name"]?>" alt="<?=$row["name"]?>">
             </a>
         <?php } ?>
     </div>
