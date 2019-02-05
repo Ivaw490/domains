@@ -4,7 +4,6 @@ include ENGINE_DIR . "/files.php";
 include ENGINE_DIR . "/bdConnection.php";
 include EXTERNALS_DIR . "/resize.php";
 
-
 $conn = conn("localhost", "root", "");
 $sql = "SELECT * FROM gallery.images_mini";
 if($conn && mysqli_query($conn, $sql)){
