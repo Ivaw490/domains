@@ -1,0 +1,51 @@
+body{
+    background-color: #404040;
+}
+.menu-btn{
+    display: block;
+    width: 112px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: deepskyblue;
+    margin: 10px 10px;
+    background-color: black;
+    border-radius: 50%;
+    transition: background-color, color, .25s;
+    font-style: italic;
+}
+.menu-btn:hover{
+    color: crimson;
+    box-shadow: deepskyblue 3px 3px 10px;
+}
+#result{
+    color: deepskyblue;
+}
+input, select, #feedback-text{
+    background-color: #404040;
+    color: deepskyblue;
+    border: 1px inset crimson;
+    outline: none;
+    font-style: italic;
+}
+input[name="submit"]{
+    border: 3px inset crimson;
+    font-weight: bold;
+}
+#feedback-text{
+    width: 90%;
+    height: 100px;
+    resize: none;
+}
+#form-legend{
+    color: deepskyblue;
+}
+.fieldset{
+    border-color: crimson;
+    width: 40%;
+    border-style: inset;
+}
+label{
+    color: deepskyblue;
+}
