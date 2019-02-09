@@ -14,7 +14,7 @@
         <li><a href="/task.php?task=1">Task 1</a></li>
         <li><a href="/task.php?task=2">Task 2</a></li>
         <li><a href="/task.php?task=3">Task 3</a></li>
-        <li><a href="/task.php?task=4">Task 4</a></li>
+        <li><a href="/task4.php">Task 4</a></li>
     </ul>
 </div>
 
