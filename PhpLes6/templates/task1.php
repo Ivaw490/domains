@@ -9,7 +9,8 @@
     <title>Task 1</title>
 </head>
 <body>
-<form action="/task.php?$task=1">
+<form action="">
+    <input type="hidden" name="task" value="1">
     <input type="text" name="first-num">
     <select name="operation" id="select-operation">
         <option value="+">+</option>

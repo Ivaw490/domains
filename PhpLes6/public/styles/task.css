@@ -2,6 +2,10 @@ body{
     background-color: #202020;
     margin: 0;
 }
+.container{
+    padding: 50px 0 50px 0;
+    display: flex;
+}
 .menu-btn{
     display: block;
     width: 112px;
@@ -10,7 +14,7 @@ body{
     text-align: center;
     text-decoration: none;
     color: deepskyblue;
-    margin: 10px 10px;
+    margin: 20px 10px;
     background-color: #202020;
     border-radius: 50%;
     box-shadow: deepskyblue -7px -6px 5px;
@@ -30,13 +34,26 @@ input, select, #feedback-text{
     border: 1px inset yellow;
     outline: none;
     font-style: italic;
+    border-radius: 5px;
 }
 input[name="submit"]{
+    justify-content: center;
+    display: flex;
+    min-width: 10%;
     border: 3px inset yellow;
     font-weight: bold;
+    transition: border-color, .2s;
+}
+input[name="submit"]:hover{
+    cursor: pointer;
+    border-color: deepskyblue;
+}
+.text-area{
+    display: flex;
 }
 #feedback-text{
-    width: 90%;
+    width: 100%;
+    min-width: 160px;
     height: 100px;
     resize: none;
 }
@@ -45,15 +62,36 @@ input[name="submit"]{
 }
 .fieldset{
     border-color: yellow;
-    width: 40%;
+    width: 460px;
     border-style: inset;
+    border-radius: 20px;
+    height: 200px;
 }
 label{
     color: deepskyblue;
 }
-.container{
-    padding: 50px 0 50px 0;
+#feedback-form{
+    display: flex;
 }
+#feedback{
+    width: 100%;
+}
+.feedback-list{
+    margin: 0 auto;
+    color: yellow;
+}
+.feedback-item{
+    width: 500px;
+}
+.feedback-item:not(:first-child){
+    border-top: 1px dashed yellow;
+    /*border-radius: 5%;*/
+}
+
+
+/*task4*/
+
+
 .gallery{
     display: flex;
     flex-wrap: wrap;

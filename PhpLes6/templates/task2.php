@@ -10,6 +10,7 @@
 </head>
 <body>
 <form action="">
+    <input type="hidden" name="task" value="2">
     <input type="text" name="first-num">
     <input type="submit" name="operation" value="+">
     <input type="submit" name="operation" value="-">
