@@ -21,7 +21,7 @@
                 <br>
                 <label for="feedback-label">Текст комментария:</label>
                 <div class="text-area">
-                    <textarea form="feedback-form" name="feedback-text" id="feedback-text" maxlength='250' ></textarea>
+                    <textarea form="feedback-form" name="feedback-text" id="feedback-text" maxlength='850' ></textarea>
                     <input type="submit" name="submit" value="Ok">
                 </div>
             </div>
@@ -30,7 +30,7 @@
         <a href="/index.php" class="menu-btn">Назад в меню</a>
     </fieldset>
     <div class="feedback-list">
-        <?php while($fbItem = mysqli_fetch_assoc($feedbackList)){;?>
+        <?php foreach($feedbackList as $fbItem){?>
             <div class="feedback-item">
                 <?php if($fbItem["username"]){?>
                 <p class="user"><?=$fbItem["username"] ?></p>
