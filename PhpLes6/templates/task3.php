@@ -12,25 +12,35 @@
 <div class="container">
     <fieldset class="fieldset">
         <legend id="form-legend">Оставьте ваш комментарий</legend>
-        <form action="" id="feedback-form">
-            <label for="user-label">
-                Вы:<br>
+        <form action="" id="feedback-form"  method="post">
+            <div id="feedback">
+                <label for="feedback-user">Вы:</label>
+                <br>
                 <input type="text" name="feedback-user">
-            </label>
-            <br>
-            <br>
-            <label for="feedback-label">
-                <div id="">
-                    Текст комментария:
-                    <textarea form="feedback-form" name="feedback-text" id="feedback-text" ></textarea>
+                <br>
+                <br>
+                <label for="feedback-label">Текст комментария:</label>
+                <div class="text-area">
+                    <textarea form="feedback-form" name="feedback-text" id="feedback-text" maxlength='250' ></textarea>
                     <input type="submit" name="submit" value="Ok">
                 </div>
-            </label><br>
+            </div>
+            <br>
         </form>
+        <a href="/index.php" class="menu-btn">Назад в меню</a>
     </fieldset>
-    <div class="feedback-list"></div>
+    <div class="feedback-list">
+        <?php while($fbItem = mysqli_fetch_assoc($feedbackList)){;?>
+            <div class="feedback-item">
+                <?php if($fbItem["username"]){?>
+                <p class="user"><?=$fbItem["username"] ?></p>
+                <?php } ?>
+                <p class="text"><?="\"" . $fbItem["text"] . "\""?></p>
+            </div>
+        <?php }?>
+    </div>
 </div>
 
-<a href="/index.php" class="menu-btn">Назад в меню</a>
+
 </body>
 </html>
