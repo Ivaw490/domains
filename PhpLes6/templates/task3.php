@@ -10,25 +10,27 @@
 </head>
 <body>
 <div class="container">
-    <fieldset class="fieldset">
-        <legend id="form-legend">Оставьте ваш комментарий</legend>
-        <form action="" id="feedback-form"  method="post">
-            <div id="feedback">
-                <label for="feedback-user">Вы:</label>
-                <br>
-                <input type="text" name="feedback-user">
-                <br>
-                <br>
-                <label for="feedback-label">Текст комментария:</label>
-                <div class="text-area">
-                    <textarea form="feedback-form" name="feedback-text" id="feedback-text" maxlength='850' ></textarea>
-                    <input type="submit" name="submit" value="Ok">
+    <div class="fieldset&btn">
+        <fieldset class="fieldset">
+            <legend id="form-legend">Оставьте ваш комментарий</legend>
+            <form action="" id="feedback-form"  method="post">
+                <div id="feedback">
+                    <label for="feedback-user">Вы:</label>
+                    <br>
+                    <input type="text" name="feedback-user">
+                    <br>
+                    <br>
+                    <label for="feedback-label">Текст комментария:</label>
+                    <div class="text-area">
+                        <textarea form="feedback-form" name="feedback-text" id="feedback-text" maxlength='850' ></textarea>
+                        <input type="submit" name="submit" value="Ok">
+                    </div>
                 </div>
-            </div>
-            <br>
-        </form>
+                <br>
+            </form>
+        </fieldset>
         <a href="/index.php" class="menu-btn">Назад в меню</a>
-    </fieldset>
+    </div>
     <div class="feedback-list">
         <?php foreach($feedbackList as $fbItem){?>
             <div class="feedback-item">
