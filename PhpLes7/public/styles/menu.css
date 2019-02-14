@@ -1,0 +1,40 @@
+body{
+    background-color: #202020;
+    margin: 0;
+}
+.big{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 10%;
+    padding: 0;
+}
+.menu li{
+    list-style-type: none;
+}
+.menu li a{
+    display: block;
+    width: 170px;
+    height: 120px;
+    line-height: 120px;
+    font-size: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: deepskyblue;
+    margin: 10px 15px;
+    background-color: #202020;
+    border-radius: 50%;
+    transition: background-color, color, .25s;
+    box-shadow: deepskyblue  -7px -7px 10px;
+    font-style: italic;
+    font-weight: 200;
+}
+.menu li a:hover{
+    color: yellow;
+    box-shadow: yellow 7px 7px 10px;
+}

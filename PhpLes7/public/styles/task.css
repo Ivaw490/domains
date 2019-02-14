@@ -5,7 +5,6 @@ body{
 .container{
     padding: 50px 0 50px 0;
     display: flex;
-    flex-wrap: wrap;
 }
 .menu-btn{
     display: block;
@@ -67,7 +66,6 @@ input[name="submit"]:hover{
     border-style: inset;
     border-radius: 20px;
     height: 200px;
-    margin: 15px;
 }
 label{
     color: deepskyblue;
@@ -82,7 +80,6 @@ label{
 .feedback-list{
     margin: 0 auto;
     color: yellow;
-    padding: 15px;
 }
 .feedback-item{
     width: 500px;
