@@ -1,3 +1,7 @@
 <?php
 include __DIR__. "/../config/main.php";
-include TMP_DIR . "menu.php";
+if(!isset($_COOKIE["user_id"])){
+    include "/login.php";
+}else{
+    include TMP_DIR . "menu.php";
+}
