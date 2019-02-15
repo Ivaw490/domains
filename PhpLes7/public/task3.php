@@ -1,6 +1,8 @@
 <?php
 include __DIR__. "/../config/main.php";
 include ENGINE_DIR . "getItems.php";
+include ENGINE_DIR . "authentication.php";
+authentication("task3");
 
 if($conn = mysqli_connect("localhost","root","")){
     if($_SERVER["REQUEST_METHOD"] == "POST"){
