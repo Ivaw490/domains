@@ -7,6 +7,9 @@ body{
     padding: 50px 0 50px 0;
     display: flex;
 }
+.accNav{
+    display: flex;
+}
 .menu-btn{
     display: block;
     width: 112px;
@@ -36,16 +39,24 @@ input, select, #feedback-text{
     outline: none;
     font-style: italic;
     border-radius: 5px;
+
+    font-weight: bold;
 }
 input[name="submit"]{
-    justify-content: center;
-    display: flex;
     min-width: 10%;
+    justify-content: center;
     border: 3px inset yellow;
     font-weight: bold;
     transition: border-color, .2s;
 }
 input[name="submit"]:hover{
+    border-color: deepskyblue;
+}
+input[type="submit"]{
+    justify-content: center;
+    transition: border-color, .2s;
+}
+input[type="submit"]:hover{
     cursor: pointer;
     border-color: deepskyblue;
 }
@@ -84,6 +95,7 @@ label{
 }
 .feedback-item{
     width: 500px;
+    margin: 15px;
 }
 .feedback-item:not(:first-child){
     border-top: 1px dashed yellow;
@@ -129,7 +141,7 @@ label{
 }
 .single-img-info{
     color: deepskyblue;
-    box-shadow: 0px 0px 30px 5px deepskyblue;
+    box-shadow: 0 0 30px 5px deepskyblue;
     margin: 0 auto;
     padding: 10px;
     display: flex;
