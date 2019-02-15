@@ -1,5 +1,7 @@
 <?php
 include __DIR__. "/../config/main.php";
+include ENGINE_DIR . "authentication.php";
+authentication("task4");
 
 
 $conn = mysqli_connect("localhost", "root", "");

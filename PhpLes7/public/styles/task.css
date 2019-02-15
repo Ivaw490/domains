@@ -1,9 +1,13 @@
 body{
     background-color: #202020;
     margin: 0;
+    color: deepskyblue;
 }
 .container{
     padding: 50px 0 50px 0;
+    display: flex;
+}
+.accNav{
     display: flex;
 }
 .menu-btn{
@@ -35,16 +39,24 @@ input, select, #feedback-text{
     outline: none;
     font-style: italic;
     border-radius: 5px;
+
+    font-weight: bold;
 }
 input[name="submit"]{
-    justify-content: center;
-    display: flex;
     min-width: 10%;
+    justify-content: center;
     border: 3px inset yellow;
     font-weight: bold;
     transition: border-color, .2s;
 }
 input[name="submit"]:hover{
+    border-color: deepskyblue;
+}
+input[type="submit"]{
+    justify-content: center;
+    transition: border-color, .2s;
+}
+input[type="submit"]:hover{
     cursor: pointer;
     border-color: deepskyblue;
 }
@@ -83,6 +95,7 @@ label{
 }
 .feedback-item{
     width: 500px;
+    margin: 15px;
 }
 .feedback-item:not(:first-child){
     border-top: 1px dashed yellow;
@@ -99,21 +112,36 @@ label{
     margin: 0 auto;
     width: 85vw;
 }
-img{
-    transition: border-color .2s;
-    border: 3px solid gray;
+.image{
+    margin: 15px;
+}
+.image:hover{
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.562);
+}
+.gallery img{
+    width: calc(200px - 10%);
+    height: calc(120px - 10%);
+    transition: .2s;
+    border: 3px solid black;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.562);
+}
+.gallery img:hover{
+    width: 200px;
+    height: 130px;
+}
+.image:hover{
     box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.562);
 }
 .gallery a{
-    width: 200px;
-    margin: 15px;
+    width: 186px;
+    height: 106px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .single-img-info{
     color: deepskyblue;
-    box-shadow: 0px 0px 30px 5px deepskyblue;
+    box-shadow: 0 0 30px 5px deepskyblue;
     margin: 0 auto;
     padding: 10px;
     display: flex;

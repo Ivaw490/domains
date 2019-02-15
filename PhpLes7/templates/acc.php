@@ -5,24 +5,18 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/styles/task.css">
     <link rel="stylesheet" href="/styles/menu.css">
-    <title>Menu</title>
+    <title>Document</title>
 </head>
 <body>
 <div class="big">
-    <nav>
-        <div class="acc">
-            <a href="/acc.php">Account</a>
-        </div>
-        <ul class="menu">
-            <li><a href="/task.php?task=1">Task 1</a></li>
-            <li><a href="/task.php?task=2">Task 2</a></li>
-            <li><a href="/task3.php">Task 3</a></li>
-            <li><a href="/task4.php">Task 4</a></li>
-        </ul>
+    <h3>Welcome <?=$name . " (" . $login . ")"?></h3>
+    <nav class="accNav">
+        <a href="/login.php" class="menu-btn">LogOut</a>
+        <a href="/index.php" class="menu-btn">Menu</a>
     </nav>
 
 </div>
-
 </body>
 </html>

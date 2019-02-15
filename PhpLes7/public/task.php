@@ -1,6 +1,8 @@
 <?php
 include __DIR__. "/../config/main.php";
 include ENGINE_DIR . "calc.php";
+include ENGINE_DIR . "authentication.php";
+authentication("task");
 
 $result = calc();
 $page = $_GET["task"];

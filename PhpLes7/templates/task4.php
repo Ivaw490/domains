@@ -13,9 +13,11 @@
     <div class="gallery">
         <?php foreach ($images as $img):
             ?>
-            <a href="/task4.php?id=<?=$img["id"]?>">
-                <img src=<?=$img["path"] . "mini/" . $img["name"]?>>
-            </a>
+            <div class="image">
+                <a href="/task4.php?id=<?=$img["id"]?>">
+                    <img src=<?=$img["path"] . "mini/" . $img["name"]?>>
+                </a>
+            </div>
         <?php endforeach;?>
     </div>
 </div>
