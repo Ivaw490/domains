@@ -1,6 +1,7 @@
 body{
     background-color: #202020;
     margin: 0;
+    color: deepskyblue;
 }
 .container{
     padding: 50px 0 50px 0;
@@ -99,14 +100,29 @@ label{
     margin: 0 auto;
     width: 85vw;
 }
-img{
-    transition: border-color .2s;
-    border: 3px solid gray;
+.image{
+    margin: 15px;
+}
+.image:hover{
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.562);
+}
+.gallery img{
+    width: calc(200px - 10%);
+    height: calc(120px - 10%);
+    transition: .2s;
+    border: 3px solid black;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.562);
+}
+.gallery img:hover{
+    width: 200px;
+    height: 130px;
+}
+.image:hover{
     box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.562);
 }
 .gallery a{
-    width: 200px;
-    margin: 15px;
+    width: 186px;
+    height: 106px;
     display: flex;
     justify-content: center;
     align-items: center;
