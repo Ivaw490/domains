@@ -14,27 +14,37 @@ body{
     margin: 0 10%;
     padding: 0;
 }
-.menu li{
+li{
     list-style-type: none;
 }
-.menu li a{
+a{
+    text-decoration: none;
+    color: deepskyblue;
+    background-color: #202020;
+    border-radius: 50%;
+    transition: background-color, color, .3s;
+    box-shadow: deepskyblue  -7px -7px 10px;
+    font-style: italic;
+}
+a:hover{
+    color: yellow;
+    box-shadow: yellow 7px 7px 10px;
+}
+.menu a{
     display: block;
     width: 170px;
     height: 120px;
     line-height: 120px;
     font-size: 40px;
     text-align: center;
-    text-decoration: none;
-    color: deepskyblue;
     margin: 10px 15px;
-    background-color: #202020;
-    border-radius: 50%;
-    transition: background-color, color, .25s;
-    box-shadow: deepskyblue  -7px -7px 10px;
-    font-style: italic;
-    font-weight: 200;
 }
-.menu li a:hover{
-    color: yellow;
-    box-shadow: yellow 7px 7px 10px;
+.acc{
+    position: absolute;
+    top: 4%;
+    right: 4%;
+}
+.acc a{
+    font-size: 20px;
+    padding: 7px;
 }
