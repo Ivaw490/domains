@@ -1,12 +1,13 @@
 <?php
 include __DIR__. "/../config/main.php";
 include ENGINE_DIR . "authentication.php";
-authentication("task4");
-
+authentication();
+session_start();
 
 $conn = mysqli_connect("localhost", "root", "");
 $sql = "SELECT * FROM gallery.images";
 $images = mysqli_fetch_all(mysqli_query($conn,$sql),MYSQLI_ASSOC);
+
 
 if($id = $_GET["id"]){
     $sql = "SELECT * FROM gallery.images WHERE id = '$id'";
