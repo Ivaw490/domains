@@ -22,7 +22,14 @@
         </div>
     </div>
 </div>
+<div class="cart">
+    <p>Корзина</p>
+    <div class="cart-item">
+        <h5>Name: <?=$single_img["name"]?></h5>
+        <img src=<?=$single_img["path"] . "mini/" . $single_img["name"]?>>
+    </div>
 
+</div>
 
 <a href="/task4.php" class="menu-btn">Назад в меню</a>
 </body>

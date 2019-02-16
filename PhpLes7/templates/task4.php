@@ -11,8 +11,7 @@
 <body>
 <div class="container">
     <div class="gallery">
-        <?php foreach ($images as $img):
-            ?>
+        <?php foreach ($images as $img):?>
             <div class="image">
                 <a href="/task4.php?id=<?=$img["id"]?>">
                     <img src=<?=$img["path"] . "mini/" . $img["name"]?>>

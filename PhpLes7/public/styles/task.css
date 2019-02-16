@@ -157,3 +157,13 @@ label{
 .description{
     padding-left: 15px;
 }
+.cart{
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    text-align: center;
+}
+.cart-item img{
+    width: 70px;
+}
