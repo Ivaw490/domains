@@ -18,7 +18,7 @@
             <input type="password" name="password" placeholder="password">
             <input type="submit" value="Ok">
         </div>
-        <?=$msg?>
+        <p class="msg"><?=$msg?></p>
     </form>
 </div>
 
