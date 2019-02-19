@@ -29,8 +29,8 @@
                 <p>...</p>
             <?php }else{ ?>
                 <div class="cart-btns">
-                    <a href="/task4.php" id="approve-order">Approve</a>
-                    <a href="/task4.php" id="clean">Clean</a>
+                    <a href="/task4.php?approve=true" id="approve-order">Approve</a>
+                    <a href="/task4.php?clean=true" id="clean">Clean</a>
                 </div>
                 <?php foreach ($_SESSION["cart"] as $item_id => $cart_item): ?>
                     <div class="cart-item">
