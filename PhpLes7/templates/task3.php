@@ -29,16 +29,19 @@
         </form>
         <a href="/index.php" class="menu-btn">Назад в меню</a>
     </fieldset>
-    <div class="feedback-list">
-        <?php foreach($feedbackList as $fbItem){?>
-            <div class="feedback-item">
-                <?php if($fbItem["username"]){?>
-                <p class="user"><?=$fbItem["username"] ?></p>
-                <?php } ?>
-                <p class="text"><?="\"" . $fbItem["text"] . "\""?></p>
-            </div>
-        <?php }?>
+    <div class="div-feedback-list">
+        <div class="feedback-list">
+            <?php foreach($feedbackList as $fbItem){?>
+                <div class="feedback-item">
+                    <?php if($fbItem["username"]){?>
+                        <p class="user"><?=$fbItem["username"] ?></p>
+                    <?php } ?>
+                    <p class="text"><?="\"" . $fbItem["text"] . "\""?></p>
+                </div>
+            <?php }?>
+        </div>
     </div>
+
 </div>
 
 
