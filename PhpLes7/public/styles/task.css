@@ -2,14 +2,13 @@ body{
     background-color: #202020;
     margin: 0;
     color: deepskyblue;
-    overflow: hidden;
 }
 a{
     text-decoration: none;
 }
 .container{
-    padding: 50px 0 50px 0;
     display: flex;
+    justify-content: space-between;
 }
 .accNav{
     display: flex;
@@ -93,9 +92,15 @@ label{
 #feedback{
     width: 100%;
 }
-.feedback-list{
+.div-feedback-list{
     margin: 0 auto;
+    overflow: hidden;
+    height: 100vh;
+}
+.feedback-list{
     color: yellow;
+    overflow: auto;
+    height: 100vh;
 }
 .feedback-item{
     width: 500px;
@@ -109,12 +114,14 @@ label{
 
 /*task4*/
 
-
+.div-gallery{
+    padding: 15px 0 0 15px;
+}
 .gallery{
     display: flex;
     flex-wrap: wrap;
-    margin: 0 auto;
-    width: 85vw;
+    /*margin: 0 auto;*/
+    /*width: 85vw;*/
 }
 .image{
     margin: 15px;
@@ -143,12 +150,16 @@ label{
     justify-content: center;
     align-items: center;
 }
+#div-single-img-info{
+    margin: 0 auto;
+    padding-top: 50px;
+}
 .single-img-info{
     color: deepskyblue;
     box-shadow: 0 0 30px 5px deepskyblue;
-    margin: 0 auto;
     padding: 10px;
     display: flex;
+    margin: 0 15px;
 }
 .single-img-info a{
     transition: color, .2s;
@@ -164,24 +175,28 @@ label{
 }
 .single-img-info img{
     border: none;
+    min-width: 200px;
+    max-height: 125px;
 }
 .description{
     padding-left: 15px;
 }
 .cart{
     display: block;
-    position: absolute;
-    top: 10px;
-    right: 0;
+    /*position: absolute;*/
+    /*top: 10px;*/
+    /*right: 0;*/
     text-align: center;
-    height: 60%;
-    width: 180px;
+    height: 70vh;
+    min-width: 180px;
+    max-width: 180px;
+    overflow: hidden;
 }
 .cart p{
     padding-right: 7px;
 }
 .cart-items{
-    height: 100%;
+    height: calc(70vh - 50px);
     overflow-wrap: break-word;
     overflow: auto;
     padding-right: 6px;
@@ -195,6 +210,9 @@ label{
 }
 .cart-item h5{
     margin-bottom: 5px;
+    text-overflow: ellipsis; /* will make [...] at the end */
+    white-space: nowrap; /* paragraph to one line */
+    overflow:hidden; /* older browsers */
 }
 .cart-btns{
     display: flex;

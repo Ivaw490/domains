@@ -9,6 +9,19 @@ $sql = "SELECT * FROM gallery.images";
 $images = mysqli_fetch_all(mysqli_query($conn,$sql),MYSQLI_ASSOC);
 
 
+if($_GET["clean"]){
+    unset($_SESSION["cart"]);
+}
+if($_GET["del-item"]){
+    unset($_SESSION["cart"][$_GET["item-id"]]);
+}
+if($_GET["approve"]){
+    foreach ($_SESSION["cart"] as $item_id => $item){
+        $sql = "INSERT INTO gallery.orders (good_id, user_id) VALUES ('$item_id', '{$_COOKIE["user_id"]}')";
+        mysqli_query($conn,$sql);
+    }
+    unset($_SESSION["cart"]);
+}
 if($id = $_GET["id"]){
     $sql = "SELECT * FROM gallery.images WHERE id = '$id'";
     $single_img = mysqli_fetch_assoc(mysqli_query($conn,$sql));
@@ -18,13 +31,6 @@ if($id = $_GET["id"]){
             "path"=>$single_img["path"],
             "count"=>1
         ];
-        $cart = $_SESSION["cart"];
-    }
-    if($_GET["clean"]){
-        unset($_SESSION["cart"]);
-    }
-    if($_GET["del-item"]){
-        unset($_SESSION["cart"][$_GET["item-id"]]);
     }
     include TMP_DIR . "single_img.php";
 }else{
