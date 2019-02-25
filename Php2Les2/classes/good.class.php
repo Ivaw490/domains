@@ -4,14 +4,13 @@ require_once "goodSetGetter.php";
 abstract class good{
     use goodSetGetter;
 
-    protected function __construct($name, $type, $price, $description)
+    protected function __construct($name, $type, $description)
     {
         $this->setName($name);
         $this->setType($type);
-        $this->setPrice($price);
         $this->setDescription($description);
     }
 
     abstract function viewGoodInfo();
-    abstract function final_cost();
+    abstract function getFinal_cost();
 }

@@ -1,30 +1,32 @@
 <?php
 
 class digital extends good{
-    private $grain_type;
-    static private $incom = 0;
+    const PRICE = 1251;
+    static private $income = 0;
 
-    function __construct($name,$type, $price, $description, $grain_type){
-        parent::__construct($name, $type, $price, $description);
-        $this->grain_type = $grain_type;
+    function __construct($name, $type, $description){
+        parent::__construct($name, $type, $description);
+        $this->setIncome();
     }
-    function setGrain_type($grain_type){
-        $this->grain_type = $grain_type;
-    }
-    function getGrain_type(){
-        return $this->grain_type;
-    }
-    function final_cost()
+    function getPrice()
     {
-
+        return self::PRICE;
+    }
+    function getFinal_cost()
+    {
+        return $this->getPrice();
+    }
+    function setIncome(){
+        self::$income += $this->getFinal_cost();
+    }
+    static function getIncome(){
+        echo "Income: " . self::$income."<br>";
     }
     function viewGoodInfo(){
-        echo "Наименование: " . $this->getName() . "<br>" .
-            "Тип зерна: " . $this->getGrain_type() . "<br>" .
-            "Тип: ". $this->getType() . "<br>" .
-            "Цена: " . $this->getPrice() . "<br>" .
-            "Описание: " . $this->getDescription() . "<br>" .
-            "Кол-во: " . $this->getAmount() . "шт." . "<br>" .
-            "Финальная стоимость: " . $this->final_cost();
+        echo "<br>Наименование: " . $this->getName() . "<br>" .
+             "Тип: ". $this->getType() . "<br>" .
+             "Цена: " . $this->getPrice() . "<br>" .
+             "Описание: " . $this->getDescription() . "<br>" .
+             "Финальная стоимость: " . $this->getFinal_cost() . "<br><br>";
     }
 }

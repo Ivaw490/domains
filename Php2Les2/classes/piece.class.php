@@ -1,40 +1,41 @@
 <?php
 
-class piece extends good{
-    private $material;
-    private $season;
+class piece extends digital{
+    static private $income = 0;
     private $amount = 0;
-    static private $incom = 0;
-    function __construct($name,$type, $season,$material, $price, $description, $amount){
-        parent::__construct($name, $type, $price, $description);
-        $this->material = $material;
-        $this->season = $season;
+    function __construct($name,$type, $description, $amount){
+        parent::__construct($name, $type, $description);
+        $this->setAmount($amount);
+        $this->setIncome();
+    }
+    function setAmount($amount)
+    {
         $this->amount = $amount;
     }
-    function setMaterial($material){
-        $this->material = $material;
-    }
-    function setSeason($season){
-        $this->season = $season;
-    }
-    function getMaterial(){
-        return $this->material;
-    }
-    function getSeason(){
-        return $this->season;
-    }
-    function final_cost()
+    function getAmount()
     {
-
+        return $this->amount;
+    }
+    function getPrice()
+    {
+        return parent::getPrice()*2;
+    }
+    function getFinal_cost()
+    {
+        return $this->final_cost = $this->getPrice()*$this->getAmount();
+    }
+    function setIncome(){
+        self::$income += $this->getFinal_cost();
+    }
+    static function getIncome(){
+        echo "Income(piece): " . self::$income ."<br>";
     }
     function viewGoodInfo(){
-        echo "Наименование: " . $this->getName() . "<br>" .
+        echo "<br>Наименование: " . $this->getName() . "<br>" .
              "Тип: ". $this->getType() . "<br>" .
-             "Материал: " . $this->getMaterial() . "<br>" .
-             "Сезон: " . $this->getSeason() . "<br>" .
              "Цена: " . $this->getPrice() . "<br>" .
              "Описание: " . $this->getDescription() . "<br>" .
              "Кол-во: " . $this->getAmount() . "шт." . "<br>" .
-             "Финальная стоимость: " . $this->final_cost();
+             "Финальная стоимость: " . $this->getFinal_cost() . "<br><br>";
     }
 }
