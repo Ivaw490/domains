@@ -1,7 +1,6 @@
 <?php
-function uploadFile($destination, $atributeName = 'file'){
-    if(isset($_FILES[$atributeName])){
-        move_uploaded_file($_FILES[$atributeName]["tmp_name"], $destination);
+function uploadFile($destination, $attributeName = 'file'){
+    if(isset($_FILES[$attributeName])){
+        move_uploaded_file($_FILES[$attributeName]["tmp_name"], $destination);
     }
 }
-    

@@ -22,12 +22,11 @@
     </form>
     </div>
     <div class="gallery">
-        <?php foreach($img_gallery as $img_item) {?>
+        {% for img_item in img_gallery %}
             <a href="#"> 
-                <img src="<?="/../img/mini/" .$img_item?>" data-src="<?="/../img/" .$img_item?>" alt="">
+                <img src="/../img/mini/{{ img_item }}" data-src="/../img/{{ img_item }}" alt="">
             </a>
-        <?php } ?>
-        
+        {% endfor %}
     </div>
     <div class="form_bg">
         <div id="slider_form">
