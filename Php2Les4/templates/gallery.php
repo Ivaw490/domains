@@ -14,26 +14,30 @@
     <h1>HW DIV</h1>
     <div class="add_img">
     <form id="add_img_form" enctype="multipart/form-data" method="POST">
-        <label id="add_img_button">
+        <label id="add_img_button" class="btn">
             Load img
             <input type="file" name="img">
         </label>
-        <input type="submit" value="Add img">
+        <input type="submit" value="Add img" class="btn">
     </form>
     </div>
     <div class="gallery">
-        {% for img_item in img_gallery %}
-            <a href="#"> 
-                <img src="/../img/mini/{{ img_item }}" data-src="/../img/{{ img_item }}" alt="">
+        <?php foreach ($img_gallery as $img_item): ?>
+            <a href="#" class="gallery-item">
+                <img src="/../img/mini/<?=$img_item["name"]?>" data-src="/../img/<?=$img_item["name"]?>" alt="">
             </a>
-        {% endfor %}
+        <?php endforeach; ?>
     </div>
+    <div id="div-addMore">
+        <a id="addMore" class="btn">Show More</a>
+    </div>
+
     <div class="form_bg">
         <div id="slider_form">
             <div id="X"></div>
         </div>
     </div>
-    
-    <script src="/../js/js.js"></script>    
+
+    <script src="/../js/js.js"></script>
 </body>
 </html>

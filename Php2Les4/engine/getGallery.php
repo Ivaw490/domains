@@ -1,6 +1,9 @@
 <?php          
 function getGallery(){
-    return array_filter(scandir(PUB_DIR . "/img/"), function($item){
-            return !is_dir(PUB_DIR . "/img/" . $item);
-    });
+    $conn = bd::getConnection();
+    $sql = "SELECT * FROM gallery.images LIMIT 3";
+    $str = $conn->prepare($sql);
+    $str->execute();
+    $result = $str->fetchAll();
+    return $result;
 }

@@ -14,7 +14,7 @@ h1 {
 #add_img_form{
     display: flex;
 }
-#add_img_button{
+.btn{
     display: block;
     margin-right: 30px;
     background-color: gray;
@@ -25,25 +25,26 @@ h1 {
     transition: color, border-color, .2s;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.562);
 }
-#add_img_button:hover{
+#addMore{
+    background:none;
+    text-decoration: none;
+    color: black;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+}
+
+#div-addMore{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.btn:hover{
     border-color: greenyellow;
     color: greenyellow;
 }
 input[type="file"]{
     display: none;
-}
-input[type="submit"]{
-    background-color: gray;
-    border: 1px solid black;
-    border-radius: 6%;
-    padding: 5px;
-    cursor: pointer;
-    transition: color, border-color, .2s;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.562);
-}
-input[type="submit"]:hover{
-    border-color: greenyellow;
-    color: greenyellow;
 }
 .gallery {
     height: 100%;
@@ -52,14 +53,13 @@ input[type="submit"]:hover{
     justify-content: center;
 
 }
-.gallery a {
-    width: 200px;
+.gallery-item {
     margin: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.gallery a img {
+.gallery-item img {
     height: 100%;
     width: 100%;
     transition: border-color .2s;
@@ -67,7 +67,7 @@ input[type="submit"]:hover{
     box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.562);
     
 }
-.gallery a img:hover {
+.gallery-item img:hover {
     border: 3px solid greenyellow;
 }
 .form_bg{
