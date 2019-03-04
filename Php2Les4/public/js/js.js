@@ -1,7 +1,7 @@
 $(document).ready(() =>{
     let $slider_form = $("#slider_form");
     $("#X").on('click', () => img_close($slider_form));
-    $(".gallery a>img").on('click', e  => img_open(e, $slider_form));
+    $(".gallery").on('click', e  => img_open(e, $slider_form));
     $("#addMore").on("click", e => ajaxFunc(e));
 });
 
