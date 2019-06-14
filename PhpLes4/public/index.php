@@ -1,9 +1,10 @@
 <?php   
 include __DIR__ . "/../config/main.php";
-include ENGINE_DIR . "/getgallery.php";
-include ENGINE_DIR . "/files.php";
-include EXTERNALS_DIR . "/resize.php";
+include ENGINE_DIR . "getgallery.php";
+include ENGINE_DIR . "files.php";
+include EXTERNALS_DIR . "resize.php";
 
+var_dump($_FILES);
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $filename = PUB_DIR . "img/" . $_FILES["img"]["name"];

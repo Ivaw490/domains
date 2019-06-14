@@ -1,8 +1,8 @@
 <?php   
 include __DIR__ . "/../config/main.php";
-include ENGINE_DIR . "/getGallery.php";
-include ENGINE_DIR . "/files.php";
-include EXTERNALS_DIR . "/resize.php";
+include ENGINE_DIR . "getGallery.php";
+include ENGINE_DIR . "files.php";
+include EXTERNALS_DIR . "resize.php";
 // Подгружаем и активируем автозагрузчик Twig-а
 require_once EXTERNALS_DIR .  'Twig/Autoloader.php';
 Twig_Autoloader::register();
