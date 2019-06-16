@@ -6,7 +6,7 @@ $conn = bd::getConnection();
 $sql = "SELECT id FROM gallery.images";
 $str1 = $conn->query($sql);
 $id = $str1->fetchAll();
-end($id);
+$lastId = end($id); //получаем последний ключ массива
 $flag = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $str->execute();
     $arr = $str->FetchAll();
 
-    if(end($arr)["id"] == end($id)["id"]){
+    if(end($arr)["id"] == $lastId["id"]){
         $flag = "end";
     }
     $html = '';

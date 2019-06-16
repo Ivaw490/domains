@@ -5,12 +5,14 @@ $(document).ready(() =>{
     $("#addMore").on("click", e => ajaxFunc(e));
 });
 
+// закрываем развернутое изображение
 function img_close($slider_form){     
     $slider_form.hide();
     $("#slider_form img").remove();
     $(".form_bg").css("display","none");
 }
 
+// открываем развернутое изображение
 function img_open(e, $slider_form){
     e.preventDefault();
     if(e.target.dataset.src){
@@ -23,6 +25,7 @@ function img_open(e, $slider_form){
     }
 }
 
+// подгружаем в галерею еще картинки
 function ajaxFunc(e){
     e.preventDefault();
     let count = $(".gallery").children('.gallery-item').length;
