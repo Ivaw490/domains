@@ -13,12 +13,14 @@ function img_close($slider_form){
 
 function img_open(e, $slider_form){
     e.preventDefault();
-    $('<img>', {
-        src: e.target.dataset.src,
-        class: "form_img"
-    }).appendTo($slider_form);
-    $(".form_bg").css("display","flex");
-    $slider_form.show();
+    if(e.target.dataset.src){
+        $('<img>', {
+            src: e.target.dataset.src,
+            class: "form_img"
+        }).appendTo($slider_form);
+        $(".form_bg").css("display","flex");
+        $slider_form.show();
+    }
 }
 
 function ajaxFunc(e){
