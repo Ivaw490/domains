@@ -1,19 +1,17 @@
 <?php
 include __DIR__ . "/../config/main.php";
 include ENGINE_DIR . "/class/bd.class.php";
+include_once ENGINE_DIR . "/getGallery.php";
 
 $conn = bd::getConnection();
-$sql = "SELECT id FROM gallery.images";
+$sql = "SELECT id FROM gallery.images ORDER BY id DESC LIMIT 1";
 $str1 = $conn->query($sql);
 $id = $str1->fetchAll();
 $lastId = end($id); //получаем последний ключ массива
 $flag = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $sql = "SELECT * FROM gallery.images LIMIT 3 OFFSET {$_POST['COUNT']}";
-    $str = $conn->prepare($sql);
-    $str->execute();
-    $arr = $str->FetchAll();
+    $arr = getGallery($_POST['COUNT']);// получаем 3 элемента начиная с $_POST['COUNT'] элемента
 
     if(end($arr)["id"] == $lastId["id"]){
         $flag = "end";

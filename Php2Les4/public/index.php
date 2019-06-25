@@ -1,6 +1,6 @@
 <?php   
 include_once __DIR__ . "/../config/main.php";
-include ENGINE_DIR . "/getGallery.php";
+include_once ENGINE_DIR . "/getGallery.php";
 include ENGINE_DIR . "/files.php";
 include EXTERNALS_DIR . "/resize.php";
 include ENGINE_DIR . "/class/bd.class.php";
