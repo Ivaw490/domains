@@ -1,12 +1,14 @@
 <?php
 include __DIR__. "/../config/main.php";
 include ENGINE_DIR . "authentication.php";
+include ENGINE_DIR . "imgAvailability.php";
 authentication();
 session_start();
 
 $conn = mysqli_connect("localhost", "root", "");
 $sql = "SELECT * FROM gallery.images";
 $images = mysqli_fetch_all(mysqli_query($conn,$sql),MYSQLI_ASSOC);
+$images = imgAvailability($images);// проверка на наличие картинок
 
 //очистка корзины (удаление всех элементов)
 if($_GET["clean"]){
