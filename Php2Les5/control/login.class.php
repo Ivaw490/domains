@@ -6,6 +6,7 @@ class login extends Base{
     private $msg;
     private $cookie;
     private $user_id;
+    private $page = 'login';
 
 
     function getLogin(){
@@ -51,6 +52,14 @@ class login extends Base{
         $this->user_id = $id["id"];
     }
 
+    function getPage(){
+        return $this->page;
+    }
+
+    function setPage($page){
+        $this->page = $page;
+    }
+
     function isPost(){
         if($_SERVER["REQUEST_METHOD"]=="POST"){
             return true;
@@ -60,27 +69,27 @@ class login extends Base{
     }
 
     function verifyingLogPass(){
-        $conn = bd::getConnection();
-        $sql = "SELECT id FROM gallery.user where login = '{$this->getLogin()}' and password = '{$this->getPass()}'";
-        $sql = $conn->prepare($sql);
-        if($sql->execute()){
-            $this->setUserId($sql->fetchAll());
-            $this->setCookie();
-        }else{
-            $this->setMsg("Некорректный ввод :(");
-        }
-    }
-
-    function start(){
-        $this->title = "login";
         $this->delCookie();
         if($this->isPost()){
             $this->setLogPass();
-            bd::getConnection();
-            $this->verifyingLogPass();
         }
-        $vars = array('msg' => $this->getMsg());
-        $this->content = $this->Template("login", $vars);
-        $this->render();
+        $conn = bd::getConnection();
+        $sql = "SELECT id FROM gallery.user where login = '{$this->getLogin()}' and password = '{$this->getPass()}'";
+        $sql = $conn->prepare($sql);
+        $sql->execute();
+        if($sql->fetch()){
+            $this->setUserId($sql->fetch());
+            $this->setCookie();
+            header("location:index.php?a=build&p=menu");
+
+        }else{
+            $this->setMsg("Некорректный ввод :(");
+            $this->title = "login";
+            $this->build();
+        }
+    }
+
+    function build(){
+        $this->content = $this->Template($this->getPage(), array('msg' => $this->getMsg()));
     }
 }

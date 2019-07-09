@@ -1,27 +1,30 @@
 <?php
 include __DIR__ . "/../model/PathConstants.php";
 
-class Base
+abstract class Base
 {
     protected $title;
     protected $content;
 
-    function Start($action){
+    function doit($action){
         $this->$action();
         $this->render();
     }
 
     protected function Template($view, $vars = array()){
-        foreach($vars as $item){
-            $$vars = $item;
+        if($vars){
+            foreach($vars as $k => $v){
+                $$k = $v;
+            }
         }
         ob_start();
-        include VIEW . "$view";
+        include VIEW . "$view.php";
         return ob_get_clean();
     }
 
     protected function render(){
         $vars = array('title' => $this->title, 'content' => $this->content);
-        $this->Template(VIEW."PathConstants.php", $vars);
+        $page = $this->Template("main", $vars);
+        echo $page;
     }
 }

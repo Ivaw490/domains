@@ -1,18 +1,22 @@
 <?php
-include __DIR__ . '/../model/PathConstants.php';
-include MODEL . 'authentication.php';
+include_once __DIR__ . '/../model/PathConstants.php';
+include_once MODEL . 'authentication.php';
 
 spl_autoload_register(function($classname){
-    include_once "$classname";
+    if(file_exists("$classname.class.php")){
+        include_once "$classname.class.php";
+    }
 });
 
-$action = 'action_';
-$action .= authentication();
-
-switch($action){
-    case 'action_login':
-
-
+$page = 'login';
+$action = 'build';
+if(authentication()){
+    $page = authentication();
 }
 
-include VIEW . "menu.php";
+if($_GET["a"] && $_GET["p"]) {
+    $action = $_GET["a"];
+    $page = $_GET["p"];
+}
+$obj = new $page();
+$obj->doit($action);

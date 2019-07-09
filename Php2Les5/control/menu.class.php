@@ -1,12 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Ivan
- * Date: 07.07.2019
- * Time: 22:22
- */
 
-class menu
+class menu extends Base
 {
+    private $page = 'menu';
 
+    function getPage()
+    {
+        return $this->page;
+    }
+
+    function build()
+    {
+        $this->title = $this->getPage();
+        $this->content = $this->Template($this->getPage());
+    }
 }
