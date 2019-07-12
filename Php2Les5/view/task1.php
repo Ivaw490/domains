@@ -1,5 +1,4 @@
-<form action="">
-    <input type="hidden" name="task" value="1">
+<form action="index.php?p=task&a=build&n=1" method="post">
     <input type="text" name="first-num">
     <select name="operation" id="select-operation">
         <option value="+">+</option>
@@ -10,5 +9,5 @@
     <input type="text" name="second-num">
     <input type="submit" value="=">
     <label id="result" value=<?=$result?>><?=$result?></label>
-    <a href="/index.php" class="menu-btn">Назад в меню</a>
+    <a href="/index.php?p=menu&a=build" class="menu-btn">Назад в меню</a>
 </form>
