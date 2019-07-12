@@ -5,6 +5,7 @@ abstract class Base
 {
     protected $title;
     protected $content;
+    protected $bdConn;
 
     function doit($action){
         $this->$action();

@@ -10,13 +10,15 @@ spl_autoload_register(function($classname){
 
 $page = 'login';
 $action = 'build';
-if(authentication()){
-    $page = authentication();
-}
 
 if($_GET["a"] && $_GET["p"]) {
     $action = $_GET["a"];
     $page = $_GET["p"];
 }
+
+if(authentication()){
+    $page = authentication();
+}
+
 $obj = new $page();
 $obj->doit($action);

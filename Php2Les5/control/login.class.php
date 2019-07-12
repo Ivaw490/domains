@@ -4,9 +4,7 @@ class login extends Base{
     private $login;
     private $pass;
     private $msg;
-    private $cookie;
     private $user_id;
-    private $page = 'login';
 
 
     function getLogin(){
@@ -30,18 +28,12 @@ class login extends Base{
         $this->msg = $msg;
     }
 
-    function getCookie(){
-        return $this->cookie;
+    function setCookie($val){
+        setcookie("user_id", $val, time() + 6000);
     }
 
-    function setCookie(){
-        setcookie("user_id",$this->getUserId(), time() + 6000);
-        $this->cookie = $_COOKIE["user_id"];
-    }
-
-    function delCookie(){
-        setcookie("user_id",$this->getUserId(), time() - 6000);
-        $this->cookie = $_COOKIE["user_id"];
+    function delCookie($val){
+        setcookie("user_id", $val, time() - 6000);
     }
 
     function getUserId(){
@@ -50,14 +42,6 @@ class login extends Base{
 
     function setUserId($id){
         $this->user_id = $id["id"];
-    }
-
-    function getPage(){
-        return $this->page;
-    }
-
-    function setPage($page){
-        $this->page = $page;
     }
 
     function isPost(){
@@ -69,27 +53,29 @@ class login extends Base{
     }
 
     function verifyingLogPass(){
-        $this->delCookie();
+        $this->delCookie($this->getUserId());
         if($this->isPost()){
             $this->setLogPass();
-        }
-        $conn = bd::getConnection();
-        $sql = "SELECT id FROM gallery.user where login = '{$this->getLogin()}' and password = '{$this->getPass()}'";
-        $sql = $conn->prepare($sql);
-        $sql->execute();
-        if($sql->fetch()){
-            $this->setUserId($sql->fetch());
-            $this->setCookie();
-            header("location:index.php?a=build&p=menu");
+            $conn = bd::getConnection();
+            $sql = "SELECT id FROM gallery.user where login = '{$this->getLogin()}' and password = '{$this->getPass()}'";
+            $sql = $conn->prepare($sql);
+            $sql->execute();
+            $data = $sql->fetch();
+            if($data){
+                $this->setUserId($data);
+                $this->setCookie($this->getUserId());
+                header("location:index.php?a=build&p=menu");
 
-        }else{
-            $this->setMsg("Некорректный ввод :(");
-            $this->title = "login";
-            $this->build();
+            }else{
+                $this->setMsg("Некорректный ввод :(");
+                $this->build();
+            }
         }
     }
 
     function build(){
-        $this->content = $this->Template($this->getPage(), array('msg' => $this->getMsg()));
+        $this->delCookie(1);
+        $this->title = "login";
+        $this->content = $this->Template("login", array('msg' => $this->getMsg()));
     }
 }
