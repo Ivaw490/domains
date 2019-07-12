@@ -1,4 +1,4 @@
-<?php
+<?php // личный кабинет
 
 class acc extends Base{
     private $name;
@@ -20,7 +20,8 @@ class acc extends Base{
         return $this->login;
     }
 
-    function setData(){
+    // получение и установка данных (пароль, логин)
+    function getSetData(){
         $conn = bd::getConnection();
         $sql = "SELECT * FROM gallery.user where id = '{$_COOKIE['user_id']}'";
         $data = $conn->prepare($sql);
@@ -30,8 +31,9 @@ class acc extends Base{
         $this->setLogin($data["login"]);
     }
 
+    // построение страницы
     function build(){
-        $this->setData();
+        $this->getSetData();
         $this->title = "account";
         $this->content = $this->Template("acc", array("name" => $this->getName(), "login" => $this->getLogin()));
     }

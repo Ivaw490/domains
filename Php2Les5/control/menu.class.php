@@ -1,4 +1,4 @@
-<?php
+<?php // главное меня сайта
 
 class menu extends Base
 {
@@ -9,6 +9,7 @@ class menu extends Base
         return $this->page;
     }
 
+    // построение страницы
     function build()
     {
         $this->title = $this->getPage();

@@ -1,10 +1,10 @@
-<?php
+<?php // страница авторизации
 
 class login extends Base{
     private $login;
     private $pass;
-    private $msg;
-    private $user_id;
+    private $msg; // текст сообщения при неудачной авторизации
+    private $user_id; // id авторизованного пользователя
 
 
     function getLogin(){
@@ -52,6 +52,7 @@ class login extends Base{
         }
     }
 
+    // проверка авторизации с дальнейшей отправкой на страницу Меню либо повторная авториация, в случае неудачи
     function verifyingLogPass(){
         $this->delCookie($this->getUserId());
         if($this->isPost()){
@@ -73,6 +74,7 @@ class login extends Base{
         }
     }
 
+    // построение страницы
     function build(){
         $this->delCookie(1);
         $this->title = "login";

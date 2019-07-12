@@ -1,4 +1,4 @@
-<?php
+<?php // базовый класс
 include __DIR__ . "/../model/PathConstants.php";
 
 abstract class Base
