@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . "/../model/PathConstants.php";
+include __DIR__ . "/../../model/PathConstants.php";
 include MODEL . "authentication.php";
 include MODEL . "imgAvailability.php";
 authentication();

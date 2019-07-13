@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . "/../model/PathConstants.php";
+include __DIR__ . "/../../model/PathConstants.php";
 include MODEL . "calc.php";
 
 class task extends Base{

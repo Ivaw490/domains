@@ -1,5 +1,5 @@
 <?php // базовый класс
-include_once __DIR__ . "/../model/PathConstants.php";
+include_once __DIR__ . "/../../model/PathConstants.php";
 include_once MODEL . "BD.php";
 
 abstract class Base

@@ -3,8 +3,8 @@ include_once __DIR__ . '/../model/PathConstants.php';
 include_once MODEL . 'authentication.php';
 
 spl_autoload_register(function($classname){
-    if(file_exists("$classname.class.php")){
-        include_once "$classname.class.php";
+    if(file_exists("classes/$classname.class.php")){
+        include_once "classes/$classname.class.php";
     }
 });
 
