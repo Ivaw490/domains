@@ -31,6 +31,7 @@ class task3 extends Base {
 
     // построение страницы
     function build(){
+        $this->title = 'task 3';
         $this->setFeedBack();
         $this->content = $this->Template("task3", array(
             "feedbackList" => $this->getFeedBack(),

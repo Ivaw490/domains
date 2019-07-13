@@ -25,6 +25,7 @@ class task extends Base{
     function build(){
         $this->setPage();
         $this->setResult();
+        $this->title = $this->getPage();
         $this->content = $this->Template($this->getPage(), array("result" => $this->getResult()));
     }
 }
