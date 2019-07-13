@@ -1,7 +1,12 @@
+<?php
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    header("location: index.php?p=task3&a=build");
+}?>
+
 <div class="container">
     <fieldset class="fieldset">
         <legend id="form-legend">Оставьте ваш комментарий</legend>
-        <form action="" id="feedback-form"  method="post">
+        <form action="index.php?p=task3&a=addFeedback" id="feedback-form"  method="post">
             <div id="feedback">
                 <label for="feedback-user">Вы:</label>
                 <br>
@@ -16,7 +21,8 @@
             </div>
             <br>
         </form>
-        <a href="/index.php" class="menu-btn">Назад в меню</a>
+        <p><?=$msg;?></p>
+        <a href="/index.php?p=menu&a=build" class="menu-btn">Назад в меню</a>
     </fieldset>
     <div class="div-feedback-list">
         <div class="feedback-list">

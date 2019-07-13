@@ -1,5 +1,6 @@
 <?php // страница авторизации
 
+
 class login extends Base{
     private $login;
     private $pass;
@@ -57,16 +58,11 @@ class login extends Base{
         $this->delCookie($this->getUserId());
         if($this->isPost()){
             $this->setLogPass();
-            $conn = bd::getConnection();
-            $sql = "SELECT id FROM gallery.user where login = '{$this->getLogin()}' and password = '{$this->getPass()}'";
-            $sql = $conn->prepare($sql);
-            $sql->execute();
-            $data = $sql->fetch();
+            $data = userVerifying(array('login' => $this->getLogin(), 'password' => $this->getPass()));
             if($data){
                 $this->setUserId($data);
                 $this->setCookie($this->getUserId());
                 header("location:index.php?a=build&p=menu");
-
             }else{
                 $this->setMsg("Некорректный ввод :(");
                 $this->build();

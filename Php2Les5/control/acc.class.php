@@ -1,5 +1,6 @@
 <?php // личный кабинет
 
+
 class acc extends Base{
     private $name;
     private $login;
@@ -22,11 +23,7 @@ class acc extends Base{
 
     // получение и установка данных (пароль, логин)
     function getSetData(){
-        $conn = bd::getConnection();
-        $sql = "SELECT * FROM gallery.user where id = '{$_COOKIE['user_id']}'";
-        $data = $conn->prepare($sql);
-        $data->execute();
-        $data = $data->fetch();
+        $data = getAccData();
         $this->setName($data["name"]);
         $this->setLogin($data["login"]);
     }
