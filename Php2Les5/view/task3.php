@@ -21,8 +21,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <br>
         </form>
-        <p><?=$msg;?></p>
+
         <a href="/index.php?p=menu&a=build" class="menu-btn">Назад в меню</a>
+        <p><?=$msg?></p>
     </fieldset>
     <div class="div-feedback-list">
         <div class="feedback-list">

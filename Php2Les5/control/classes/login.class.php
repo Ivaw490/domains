@@ -7,45 +7,44 @@ class login extends Base{
     private $msg; // текст сообщения при неудачной авторизации
     private $user_id; // id авторизованного пользователя
 
-
-    function getLogin(){
+    private function getLogin(){
         return $this->login;
     }
 
-    function getPass(){
+    private function getPass(){
         return $this->pass;
     }
 
-    function setLogPass(){
+    private function setLogPass(){
         $this->login = $_POST["login"];
         $this->pass = $_POST["password"];
     }
 
-    function getMsg(){
+    private function getMsg(){
         return $this->msg;
     }
 
-    function setMsg($msg){
+    private function setMsg($msg){
         $this->msg = $msg;
     }
 
-    function setCookie($val){
+    private function setCookie($val){
         setcookie("user_id", $val, time() + 6000);
     }
 
-    function delCookie($val){
+    private function delCookie($val){
         setcookie("user_id", $val, time() - 6000);
     }
 
-    function getUserId(){
+    private function getUserId(){
         return $this->user_id;
     }
 
-    function setUserId($id){
+    private function setUserId($id){
         $this->user_id = $id["id"];
     }
 
-    function isPost(){
+    private function isPost(){
         if($_SERVER["REQUEST_METHOD"]=="POST"){
             return true;
         }else{
@@ -54,7 +53,7 @@ class login extends Base{
     }
 
     // проверка авторизации с дальнейшей отправкой на страницу Меню либо повторная авториация, в случае неудачи
-    function verifyingLogPass(){
+    protected function verifyingLogPass(){
         $this->delCookie($this->getUserId());
         if($this->isPost()){
             $this->setLogPass();
@@ -71,7 +70,7 @@ class login extends Base{
     }
 
     // построение страницы
-    function build(){
+    protected function build(){
         $this->delCookie(1);
         $this->title = "login";
         $this->content = $this->Template("login", array('msg' => $this->getMsg()));

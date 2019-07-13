@@ -3,38 +3,37 @@
 
 class task3 extends Base {
     private $feedbackList; // массив отзывов
-    private $Msg; // сообщение при неверном заполнении формы
+    private $msg; // сообщение при неверном заполнении формы
 
     // добавление нового отзыва или вывод сообщения о неверно заполненных полях
-    function addFeedback(){
+    protected function addFeedback(){
         if($result = insertFeedBack()){
             $this->setMsg($result);
         }
         $this->build();
     }
 
-    function setMsg($msg){
-        $this->Msg = $msg;
+    private function setMsg($msg){
+        $this->msg = $msg;
     }
 
-    function getMsg(){
-        return $this->Msg;
+    private function getMsg(){
+        return $this->msg;
     }
 
-    function setFeedback(){
+    private function setFeedback(){
         $this->feedbackList = getAllFeedBacks();
     }
 
-    function getFeedBack(){
+    private function getFeedBack(){
         return $this->feedbackList;
     }
 
     // построение страницы
-    function build(){
+    protected function build(){
         $this->title = 'task 3';
         $this->setFeedBack();
         $this->content = $this->Template("task3", array(
-            "feedbackList" => $this->getFeedBack(),
-            'msg' => $this->getMsg()));
+            'msg' => $this->getMsg(), "feedbackList" => $this->getFeedBack()));
     }
 }

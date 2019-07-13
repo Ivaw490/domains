@@ -6,23 +6,23 @@ class task extends Base{
     private $result = 0;
     private $page;
 
-    function setResult(){
+    private function setResult(){
         $this->result = calc();
     }
 
-    function getResult(){
+    private function getResult(){
         return $this->result;
     }
 
-    function setPage(){
+    private function setPage(){
         $this->page = "task" . $_GET["n"];
     }
 
-    function getPage(){
+    private function getPage(){
         return $this->page;
     }
 
-    function build(){
+    protected function build(){
         $this->setPage();
         $this->setResult();
         $this->title = $this->getPage();

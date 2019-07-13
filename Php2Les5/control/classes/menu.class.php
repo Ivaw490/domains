@@ -4,13 +4,13 @@ class menu extends Base
 {
     private $page = 'menu';
 
-    function getPage()
+    private function getPage()
     {
         return $this->page;
     }
 
     // построение страницы
-    function build()
+    protected function build()
     {
         $this->title = $this->getPage();
         $this->content = $this->Template($this->getPage());
