@@ -1,5 +1,5 @@
 body{
-    background-color: #202020;
+    background-color: #ffffff;
     margin: 0;
     color: deepskyblue;
 }
@@ -81,6 +81,7 @@ input[type="submit"]:hover{
     border-style: inset;
     border-radius: 20px;
     height: 200px;
+    padding-bottom: 25px;
 }
 label{
     color: deepskyblue;

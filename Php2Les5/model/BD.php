@@ -13,9 +13,9 @@ function userVerifying($arr){
 // получение данных авторизованного пользователя по его id
 function getAccData(){
     $conn = bd::getConnection();
-    $sql = "SELECT * FROM gallery.user where id = '{$_COOKIE['user_id']}'";
+    $sql = "SELECT * FROM gallery.user where id = :id";
     $data = $conn->prepare($sql);
-    $data->execute();
+    $data->execute(array(':id' => $_COOKIE['user_id']));
     $data = $data->fetch();
     return $data;
 }
@@ -45,4 +45,34 @@ function getAllFeedBacks(){
     }else{
         return $data[0] = [["text" => "There are no feedback yet:("]];
     }
+}
+
+// получение массива картинок
+function getImages(){
+    $conn = bd::getConnection();
+    $sql = "SELECT * FROM gallery.images";
+    $images = $conn->prepare($sql);
+    $images->execute();
+    $images = $images->fetchAll();
+    return $images;
+}
+
+// запись в бд из Cart(корзины)
+function insertGalleryOrder(){
+    $conn = bd::getConnection();
+    foreach ($_SESSION["cart"] as $item_id => $item){
+        $sql = "INSERT INTO gallery.orders (good_id, user_id) VALUES (:good_id, :user_id)";
+        $sql = $conn->prepare($sql);
+        $sql->execute(array(':good_id' => $item_id, ':user_id' => $_COOKIE["user_id"]));
+    }
+}
+
+// получение картинки по id
+function getImgById(){
+    $conn = bd::getConnection();
+    $sql = "SELECT * FROM gallery.images WHERE id = :id";
+    $sql = $conn->prepare($sql);
+    $sql->execute(array(':id' => $_GET["id"]));
+    $single_img = $sql->fetch(PDO::FETCH_ASSOC);
+    return $single_img;
 }

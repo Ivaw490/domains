@@ -1,15 +1,15 @@
 <div class="container">
     <div id="div-single-img-info">
         <div class="single-img-info">
-            <a href="<?=$single_img["path"] . $single_img["name"]?>" target="_blank">
-                <img src=<?=$single_img["path"] . "mini/" . $single_img["name"]?>>
+            <a href="<?=$path?>" target="_blank">
+                <img src=<?=$miniPath?>>
             </a>
             <div class="description">
-                <p>Name: <?=$single_img["name"]?></p>
-                <p>Path: <?=$single_img["path"]?></p>
+                <p>Name: <?=$imgName?></p>
+                <p>Path: <?=$path?></p>
                 <?//ceil - округление в большую сторону(floor - в меньшую)?>
-                <p>Size: <?=ceil($single_img["size"]/1000) . " kilobyte"?></p>
-                <a href="/task4.php?id=<?=$single_img["id"]?>&add=true" class="add-to-cart-btn">Add to cart</a>
+                <p>Size: <?=$size?></p>
+                <a href="/index.php?p=singleImg&a=build&id=<?=$imgId?>&act=single&add=true" class="add-to-cart-btn">Add to cart</a>
             </div>
         </div>
     </div>
@@ -21,15 +21,15 @@
                 <p>...</p>
             <?php }else{ ?>
                 <div class="cart-btns">
-                    <a href="/task4.php?id=<?=$single_img["id"]?>&approve=true" id="approve-order">Approve</a>
-                    <a href="/task4.php?id=<?=$single_img["id"]?>&clean=true" id="clean">Clean</a>
+                    <a href="/index.php?p=singleImg&a=build&id=<?=$imgId?>&act=approve" id="approve-order">Approve</a>
+                    <a href="/index.php?p=singleImg&a=build&id=<?=$imgId?>&act=clean" id="clean">Clean</a>
                 </div>
                 <?php foreach ($_SESSION["cart"] as $item_id => $cart_item): ?>
                     <div class="cart-item">
                         <h5>Name: <?=$cart_item["name"]?></h5>
                         <div class="cart-item-img">
                             <img alt="img" src=<?=$cart_item["path"] . "mini/" . $cart_item["name"]?>>
-                            <a href="/task4.php?id=<?=$single_img["id"]?>&del-item=true&item-id=<?=$item_id?>"
+                            <a href="/index.php?p=singleImg&a=build&id=<?=$imgId?>&act=del-item&item-id=<?=$item_id?>"
                                title="delete item" id="x">x</a>
                         </div>
                     </div>
@@ -39,4 +39,4 @@
     </div>
 </div>
 
-<a href="/task4.php" class="menu-btn">Назад в меню</a>
+<a href="/index.php?p=task4&a=build" class="menu-btn">Назад в меню</a>
