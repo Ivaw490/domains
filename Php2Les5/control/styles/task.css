@@ -1,50 +1,25 @@
-body{
-    background-color: #ffffff;
-    margin: 0;
-    color: deepskyblue;
-}
-a{
-    text-decoration: none;
-}
-.container{
+.container,
+.container.singleImg,
+.container.task3,
+.container.task4{
     display: flex;
     justify-content: space-between;
 }
-.accNav{
+
+.acc_nav{
     display: flex;
 }
-.menu-btn{
-    display: block;
-    width: 112px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    /*text-decoration: none;*/
-    color: deepskyblue;
-    margin: 20px 10px;
-    background-color: #202020;
-    border-radius: 50%;
-    box-shadow: deepskyblue -7px -6px 5px;
-    transition: background-color, color, .25s;
-    font-style: italic;
-}
-.menu-btn:hover{
-    color: yellow;
-    box-shadow: yellow 7px 6px 5px;
-}
-#result{
-    color: deepskyblue;
-}
-input, select, #feedback-text{
-    background-color: #202020;
+
+input, select, .feedback-text{
+    background-color: #20202000;
     color: deepskyblue;
     border: 1px inset yellow;
     outline: none;
     font-style: italic;
     border-radius: 5px;
-
     font-weight: bold;
 }
+
 input[name="submit"]{
     min-width: 10%;
     justify-content: center;
@@ -52,29 +27,36 @@ input[name="submit"]{
     font-weight: bold;
     transition: border-color, .2s;
 }
+
 input[name="submit"]:hover{
     border-color: deepskyblue;
 }
+
 input[type="submit"]{
     justify-content: center;
     transition: border-color, .2s;
 }
+
 input[type="submit"]:hover{
     cursor: pointer;
     border-color: deepskyblue;
 }
+
 .text-area{
     display: flex;
 }
-#feedback-text{
+
+.feedback-text{
     width: 100%;
     min-width: 160px;
     height: 100px;
     resize: none;
 }
-#form-legend{
+
+.form-legend{
     color: deepskyblue;
 }
+
 .fieldset{
     border-color: yellow;
     width: 460px;
@@ -83,53 +65,74 @@ input[type="submit"]:hover{
     height: 200px;
     padding-bottom: 25px;
 }
+
 label{
     color: deepskyblue;
 }
-#feedback-form{
+
+.feedback-form{
     display: flex;
     margin-bottom: 50px;
 }
-#feedback{
+
+.feedback{
     width: 100%;
 }
+
 .div-feedback-list{
     margin: 0 auto;
     overflow: hidden;
     height: 100vh;
 }
+
 .feedback-list{
     color: yellow;
     overflow: auto;
     height: 100vh;
 }
+
 .feedback-item{
-    width: 500px;
+    max-width: 500px;
+    min-width: 250px;
     margin: 15px;
 }
+
 .feedback-item:not(:first-child){
     border-top: 1px dashed yellow;
     /*border-radius: 5%;*/
 }
 
+.user-date{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date{
+    font-size: 11px;
+}
 
 /*task4*/
 
 .div-gallery{
     padding: 15px 0 0 15px;
 }
+
 .gallery{
     display: flex;
     flex-wrap: wrap;
     /*margin: 0 auto;*/
     /*width: 85vw;*/
 }
+
 .image{
     margin: 15px;
 }
+
 .image:hover{
     box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.562);
 }
+
 .gallery img{
     width: calc(200px - 10%);
     height: calc(120px - 10%);
@@ -137,13 +140,16 @@ label{
     border: 3px solid black;
     box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.562);
 }
+
 .gallery img:hover{
     width: 200px;
     height: 130px;
 }
+
 .image:hover{
     box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.562);
 }
+
 .gallery a{
     width: 186px;
     height: 106px;
@@ -151,37 +157,45 @@ label{
     justify-content: center;
     align-items: center;
 }
-#div-single-img-info{
+
+.div_single_img_info{
     margin: 0 auto;
     padding-top: 50px;
 }
-.single-img-info{
+
+.single_img_info{
     color: deepskyblue;
     box-shadow: 0 0 30px 5px deepskyblue;
     padding: 10px;
     display: flex;
     margin: 0 15px;
 }
-.single-img-info a{
+
+.single_img_info a{
     transition: color, .2s;
     display: flex;
     /*text-decoration: none;*/
 }
+
 .add-to-cart-btn{
     color: deepskyblue;
     justify-content: center;
 }
+
 .add-to-cart-btn:hover{
     color: yellow;
 }
-.single-img-info img{
+
+.single_img_info img{
     border: none;
     min-width: 200px;
     max-height: 125px;
 }
+
 .description{
     padding-left: 15px;
 }
+
 .cart{
     display: block;
     /*position: absolute;*/
@@ -193,57 +207,70 @@ label{
     max-width: 180px;
     overflow: hidden;
 }
+
 .cart p{
     padding-right: 7px;
 }
+
 .cart-items{
     height: calc(70vh - 50px);
     overflow-wrap: break-word;
     overflow: auto;
     padding-right: 6px;
 }
-.cart-items a{
-    color: deepskyblue;
-    /*text-decoration: none;*/
-}
+
 .cart-item img{
     width: 70px;
 }
+
 .cart-item h5{
     margin-bottom: 5px;
     text-overflow: ellipsis; /* will make [...] at the end */
     white-space: nowrap; /* paragraph to one line */
     overflow:hidden; /* older browsers */
 }
+
 .cart-btns{
     display: flex;
     justify-content: center;
 }
-#approve-order, #clean{
+
+.approve-order, .clean{
     border-radius: 5px;
     margin: 7px 10px;
     padding: 2px;
     transition: color, 0.2s;
 }
-#approve-order{
+
+.approve-order{
     box-shadow: 0 0 10px 1px green;
 }
-#clean{
+
+.clean{
     box-shadow: 0 0 10px 1px red;
 }
-#approve-order:hover{
+
+.approve-order:hover{
     box-shadow: 0 0 10px 3px green;
 }
-#clean:hover{
+
+.clean:hover{
     box-shadow: 0 0 10px 3px red;
 }
+
 .cart-item-img{
     position: relative;
 }
-#x{
+
+.x{
     color: red;
     position: absolute;
     top: 0;
     right: 21%;
     line-height: 10px;
+    transition: color 0.2s;
+}
+
+.order-btn{
+    color: deepskyblue;
 }

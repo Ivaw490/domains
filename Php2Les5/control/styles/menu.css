@@ -1,35 +1,46 @@
 body{
-    background-color: #202020;
+    background-image: url(/../img/bg/bg.jpg);
+    background-repeat: round;
     margin: 0;
+    color: deepskyblue;
+    height: 100vh;
 }
-.big{
+
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.main-menu_acc_btn a,
+.main_menu_nav_btn a,
+.back-to-menu_btn{
+    color: deepskyblue;
+    transition: background-color, color, .3s;
+    font-style: italic;
+}
+
+a:hover{
+    color: yellow;
+    text-shadow: black 10px 10px 10px;
+}
+
+.contentCentre{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-.menu{
+
+.main_menu_nav_btn{
     display: flex;
     flex-wrap: wrap;
     padding: 0;
 }
-li{
-    list-style-type: none;
-}
-a{
-    text-decoration: none;
-    color: deepskyblue;
-    background-color: #202020;
-    border-radius: 50%;
-    transition: background-color, color, .3s;
-    box-shadow: deepskyblue  -7px -7px 10px;
-    font-style: italic;
-}
-a:hover{
-    color: yellow;
-    box-shadow: yellow 7px 7px 10px;
-}
-.menu a{
+
+.main_menu_nav_btn a{
     display: block;
     width: 170px;
     height: 120px;
@@ -38,12 +49,24 @@ a:hover{
     text-align: center;
     margin: 10px 15px;
 }
-.acc{
+
+.main-menu_acc_btn{
     position: absolute;
     top: 4%;
     right: 4%;
 }
-.acc a{
+
+.main-menu_acc_btn a{
     font-size: 20px;
     padding: 7px;
+}
+
+.back-to-menu_btn{
+    margin: 20px 10px;
+    border-radius: 50%;
+}
+
+.back-to-menu_btn:hover{
+    color: yellow;
+    text-shadow: black 10px 10px 10px;
 }
