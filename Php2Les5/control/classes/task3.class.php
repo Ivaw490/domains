@@ -9,8 +9,10 @@ class task3 extends Base {
     protected function addFeedback(){
         if($result = insertFeedBack()){
             $this->setMsg($result);
+            $this->build();
+        }else{
+            header("location: index.php?p=task3&a=build");
         }
-        $this->build();
     }
 
     private function setMsg($msg){
