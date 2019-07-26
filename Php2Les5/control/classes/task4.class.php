@@ -49,7 +49,9 @@ class task4 extends Base {
         session_start();
         $this->title = 'task 4';
         $this->act();
+        $cart = $this->Template("Cart");
         $this->content = $this->Template('task4', array(
-            'images' => $this->getImages()));
+            'images' => $this->getImages(),
+            'cart' => $cart));
     }
 }

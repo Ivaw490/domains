@@ -25,11 +25,13 @@ class singleImg extends task4{
         }
         $this->act();
         $this->title = "singleImg";
+        $cart = $this->Template("Cart");
         $this->content = $this->Template('singleImg', array(
             'path' => $single_img["path"] . $single_img["name"],
             'miniPath' => $single_img["path"] . "mini/" . $single_img["name"],
             'imgName' => $single_img["name"],
             'size' => ceil($single_img["size"]/1000) . " kilobyte",
-            'imgId' => $single_img["id"]));
+            'imgId' => $single_img["id"],
+            'cart' => $cart));
     }
 }
