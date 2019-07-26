@@ -24,9 +24,10 @@ function getAccData(){
 function insertFeedBack(){
     if(($user = $_POST["feedback-user"]) && ($text = $_POST["feedback-text"])) {
         $conn = bd::getConnection();
-        $sql = "INSERT INTO gallery.feedback (username, text) VALUES (:user, :text)";
+        $now = date("Y-m-d H:i:s");
+        $sql = "INSERT INTO gallery.feedback (username, text, date) VALUES (:user, :text, :now)";
         $data = $conn->prepare($sql);
-        $data->execute(array(':user' => $user, ':text' => $text));
+        $data->execute(array(':user' => $user, ':text' => $text, ':now' => $now));
     }
     else{
         return "Проверьте ввод. Заполнены не все поля";
